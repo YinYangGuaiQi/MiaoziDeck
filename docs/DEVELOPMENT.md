@@ -11,6 +11,8 @@ python3 scripts/package_release.py --assets-dir /path/to/runtime-assets --offici
 
 运行资源的来源与目录要求见 [第三方资源](THIRD_PARTY.md)。输出位于 `release/`，包含单文件 `.sh` 安装包、SHA-256 文件与打包用 ZIP。GitHub 自动生成的 Source code ZIP 不能直接安装。
 
+完整安装文件为 `MiaoziDeck-0.1.0-alpha.9.sh`，已内置全部安装资源，直接用 `bash 文件名.sh` 运行即可。仓库根目录的 `install.sh` 是在线下载入口，会下载并运行同一完整安装文件；`.sh.sha256` 是在线安装所用的校验文件，手动安装只需下载完整 `.sh` 文件。
+
 | 文件 | 用途 |
 | --- | --- |
 | `src/index.tsx` | Decky 界面 |

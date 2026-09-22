@@ -8,6 +8,8 @@ py_modules/
 official/
 decky/
 *.run
+MiaoziDeck-*.sh
+MiaoziDeck-*.sh.sha256
 __pycache__/
 *.py[cod]
 .venv/
