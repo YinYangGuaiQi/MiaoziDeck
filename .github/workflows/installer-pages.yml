@@ -1,0 +1,54 @@
+name: Publish installer address
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - install.sh
+      - .github/workflows/installer-pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: installer-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/configure-pages@v5
+      - name: Prepare installer address
+        shell: bash
+        run: |
+          mkdir -p _site
+          cp install.sh _site/i
+          cat > _site/index.html <<'HTML'
+          <!doctype html>
+          <html lang="zh-CN">
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>喵子 Deck 安装</title>
+          <h1>喵子 Deck</h1>
+          <p><a href="https://github.com/YinYangGuaiQi/MiaoziDeck/releases/latest">下载双击安装包</a></p>
+          <p>也可以在 Steam Deck 桌面终端运行：</p>
+          <pre>curl -fsSL https://yinyangguaiqi.github.io/MiaoziDeck/i | bash</pre>
+          <p><a href="https://github.com/YinYangGuaiQi/MiaoziDeck">项目说明</a></p>
+          </html>
+          HTML
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Deploy installer address
+        id: deployment
+        uses: actions/deploy-pages@v4

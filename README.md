@@ -25,7 +25,7 @@
 <summary>在线安装命令</summary>
 
 ```sh
-curl -fL --proto '=https' --proto-redir '=https' https://raw.githubusercontent.com/YinYangGuaiQi/MiaoziDeck/main/install.sh -o /tmp/miaozi-deck-install.sh && bash /tmp/miaozi-deck-install.sh
+curl -fsSL https://yinyangguaiqi.github.io/MiaoziDeck/i | bash
 ```
 
 默认安装 Latest 版本；修改 Release 显示名称不会影响安装。需要固定版本时，在命令末尾添加 `--version v0.1.0-alpha.9`。

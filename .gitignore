@@ -30,6 +30,7 @@ venv/
 *.yeml
 *.yaml
 *.yml
+!.github/workflows/installer-pages.yml
 data/
 state/
 profiles/

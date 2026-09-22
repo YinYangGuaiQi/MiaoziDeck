@@ -26,6 +26,7 @@ python3 scripts/package_release.py --assets-dir /path/to/runtime-assets --offici
 | `acceleration_service.py` | 独立后台加速服务 |
 | `core_session.py` / `cache_nodes.py` | 内核通信与节点解析 |
 | `install.sh` | 在线安装入口 |
+| `.github/workflows/installer-pages.yml` | 自动将在线入口发布到项目安装地址 `/i` |
 | `scripts/desktop_package.py` / `scripts/desktop_launch.py` | 生成及启动双击安装文件 |
 | `scripts/` | 打包、自解压及安装脚本 |
 
