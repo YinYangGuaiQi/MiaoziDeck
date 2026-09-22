@@ -17,7 +17,7 @@
 2. 打开 Konsole，运行：
 
    ```sh
-   bash ~/Downloads/MiaoziDeck-0.1.0-alpha.9.run
+   bash ~/Downloads/MiaoziDeck-0.1.0-alpha.9.sh
    ```
 
 3. 按提示输入本机管理员密码，完成后返回游戏模式。

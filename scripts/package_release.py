@@ -100,7 +100,7 @@ def main():
         f'{digest}  {output.name}\n', encoding='utf-8')
     header = checked_file(ROOT, 'scripts/self_extract.sh').read_text(encoding='utf-8')
     header = header.replace('PAYLOAD_SHA256', digest).replace('\r\n', '\n')
-    executable = output.with_suffix('.run')
+    executable = output.with_suffix('.sh')
     with executable.open('xb') as stream:
         stream.write(header.encode('utf-8'))
         stream.write(b'\n__MIAOZI_PAYLOAD__\n')

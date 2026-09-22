@@ -52,7 +52,7 @@ class StandaloneChecks(unittest.TestCase):
 
     def test_installer_extracts_and_rejects_corruption(self):
         version = json.loads((ROOT / 'package.json').read_text())['version']
-        installer = ROOT / 'release' / f'MiaoziDeck-{version}.run'
+        installer = ROOT / 'release' / f'MiaoziDeck-{version}.sh'
         header = installer.read_bytes().split(b'\n__MIAOZI_PAYLOAD__\n', 1)[0].decode()
         code = header.split("<<'PY'\n", 1)[1].split('\nPY\n', 1)[0]
         def check_launch(args, **kwargs):
@@ -68,7 +68,7 @@ class StandaloneChecks(unittest.TestCase):
             exec(compile(code, '<self-extractor>', 'exec'), {})
             run.assert_called_once()
         with tempfile.TemporaryDirectory() as folder:
-            corrupt = Path(folder) / 'corrupt.run'
+            corrupt = Path(folder) / 'corrupt.sh'
             corrupt.write_bytes(header.encode() + b'\n__MIAOZI_PAYLOAD__\nbroken')
             with patch('sys.argv', ['check', str(corrupt)]), patch('subprocess.run') as run:
                 with self.assertRaises(SystemExit):

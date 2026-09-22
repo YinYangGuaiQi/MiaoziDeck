@@ -1,4 +1,4 @@
-# alpha.9 私有预发布
+# alpha.9 发布说明
 
 仓库：[YinYangGuaiQi/MiaoziDeck](https://github.com/YinYangGuaiQi/MiaoziDeck)，保持私有。About 简介：
 
@@ -10,16 +10,16 @@
 2. 验证新装 Decky 分支及已有 Decky 升级分支。
 3. 确定原创代码和第三方组件的分发许可；目前包内原版组件的公开再分发授权未确认。
 
-当前仅作为私有候选版供下载测试，尚不满足前两项的设备端验证要求。私有 Release 必须标为预发布，不能写成已经通过全新设备验证的稳定版本。
+当前作为私有仓库中的普通 Release 发布并设为 Latest，便于下载。版本仍为 alpha 测试版，尚未完成全新 Steam Deck 真机验证；Latest 不代表稳定性认证。
 
 ## 上传
 
 将源码目录内容作为 GitHub 仓库根目录，默认分支 `main`。不提交二进制、运行配置、`node_modules` 或 `release`。
 
-创建标签 `v0.1.0-alpha.9` 的预发布 Release，上传：
+使用标签 `v0.1.0-alpha.9`，发布普通 Release 并设为 Latest，上传：
 
-- `MiaoziDeck-0.1.0-alpha.9.run`
-- `MiaoziDeck-0.1.0-alpha.9.run.sha256`
+- `MiaoziDeck-0.1.0-alpha.9.sh`
+- `MiaoziDeck-0.1.0-alpha.9.sh.sha256`
 
 用户只需下载第一个文件，文件内已带载荷校验。在线安装入口会自动获取并校验第二个文件。不要把 Source code ZIP 标为安装包。
 

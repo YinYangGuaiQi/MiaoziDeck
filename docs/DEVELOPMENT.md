@@ -9,7 +9,7 @@ npm run build
 python3 scripts/package_release.py --assets-dir /path/to/runtime-assets --official-dir /path/to/official-runtime --decky-dir /path/to/decky-runtime
 ```
 
-运行资源的来源与目录要求见 [第三方资源](THIRD_PARTY.md)。输出位于 `release/`，包含单文件 `.run` 安装包、SHA-256 文件与打包用 ZIP。GitHub 自动生成的 Source code ZIP 不能直接安装。
+运行资源的来源与目录要求见 [第三方资源](THIRD_PARTY.md)。输出位于 `release/`，包含单文件 `.sh` 安装包、SHA-256 文件与打包用 ZIP。GitHub 自动生成的 Source code ZIP 不能直接安装。
 
 | 文件 | 用途 |
 | --- | --- |
@@ -22,4 +22,4 @@ python3 scripts/package_release.py --assets-dir /path/to/runtime-assets --offici
 | `install.sh` | 在线安装入口 |
 | `scripts/` | 打包、自解压及安装脚本 |
 
-当前仍为候选版。本地检查不能替代真实 SteamOS 的全新安装、首次登录和自动安装 Decky 测试。发布流程见 [发布说明](PUBLISHING.md)。
+GitHub 上按普通 Release 发布并设为 Latest，版本仍为 alpha 测试版，尚未完成全新 Steam Deck 真机验证。本地检查不能替代真实 SteamOS 的全新安装、首次登录和自动安装 Decky 测试。发布流程见 [发布说明](PUBLISHING.md)。

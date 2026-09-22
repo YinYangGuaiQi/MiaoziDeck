@@ -17,11 +17,11 @@ done
 for command in curl python3; do command -v "$command" >/dev/null || { printf '缺少系统命令：%s\n' "$command"; exit 1; }; done
 TEMP_DIR="$(mktemp -d -t miaozi-download-XXXXXXXX)"
 trap 'if [[ -n "$TEMP_DIR" && -d "$TEMP_DIR" ]]; then rm -rf -- "$TEMP_DIR"; fi' EXIT
-ASSET="MiaoziDeck-${VERSION#v}.run"
+ASSET="MiaoziDeck-${VERSION#v}.sh"
 BASE="https://github.com/$REPO/releases/download/$VERSION"
 printf '正在下载完整安装文件，无需另装原版喵子客户端。\n'
 if ! curl -fL --show-error --proto '=https' --proto-redir '=https' --retry 2 --connect-timeout 20 --max-time 1200 "$BASE/$ASSET" -o "$TEMP_DIR/$ASSET"; then
-  printf '下载失败，请检查 GitHub 网络和 Release 文件地址；私有仓库请登录 GitHub 下载单个 .run 文件安装。\n' >&2
+  printf '下载失败，请检查 GitHub 网络和 Release 文件地址；私有仓库请登录 GitHub 下载单个 .sh 文件安装。\n' >&2
   exit 1
 fi
 curl -fL --show-error --proto '=https' --proto-redir '=https' --retry 2 --max-time 60 "$BASE/$ASSET.sha256" -o "$TEMP_DIR/$ASSET.sha256"
