@@ -21,16 +21,13 @@
 
 若浏览器将文件保存为 `.desktop.download`，请去掉末尾的 `.download` 再双击。
 
-<details>
-<summary>在线安装命令</summary>
+### 在线安装命令
 
 ```sh
 curl -fsSL https://yinyangguaiqi.github.io/MiaoziDeck/i | bash
 ```
 
-默认安装 Latest 版本；修改 Release 显示名称不会影响安装。需要固定版本时，在命令末尾添加 `--version v0.1.0-alpha.9`。
-
-</details>
+默认安装 Latest 版本；修改 Release 显示名称不会影响安装。需要固定版本时，将命令末尾的 `bash` 改为 `bash -s -- --version v0.1.0-alpha.9`。
 
 ## 使用
 
