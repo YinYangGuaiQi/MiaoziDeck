@@ -13,16 +13,13 @@
 
 ## 安装
 
-1. 切换到桌面模式，下载 [完整安装文件](https://github.com/YinYangGuaiQi/MiaoziDeck/releases/tag/v0.1.0-alpha.9)，放入下载目录。
-2. 打开 Konsole，运行：
+1. 切换到桌面模式，下载 [MiaoziDeck-0.1.0-alpha.9.desktop](https://github.com/YinYangGuaiQi/MiaoziDeck/releases/download/v0.1.0-alpha.9/MiaoziDeck-0.1.0-alpha.9.desktop)。
+2. 在文件管理器中双击安装文件；若系统询问是否信任或允许执行，确认运行。
+3. 在自动打开的安装窗口中输入本机管理员密码，完成后返回游戏模式。
 
-   ```sh
-   bash ~/Downloads/MiaoziDeck-0.1.0-alpha.9.sh
-   ```
+只需这一个文件，保存在哪个文件夹都可以。无需手动输入命令、解压、复制配置或提前登录原版客户端。当前仓库为私有，下载时需登录有权限的 GitHub 账号。
 
-3. 按提示输入本机管理员密码，完成后返回游戏模式。
-
-无需手动解压、复制配置或提前登录原版客户端。当前仓库为私有，下载时需登录有权限的 GitHub 账号。
+若浏览器将文件保存为 `.desktop.download`，请去掉末尾的 `.download` 再双击。
 
 <details>
 <summary>在线安装命令（仓库公开后可用）</summary>
@@ -39,6 +36,6 @@ curl -fL --proto '=https' https://raw.githubusercontent.com/YinYangGuaiQi/Miaozi
 
 ## 说明
 
-- 当前为 alpha.9 测试版，全新设备的首次登录和自动安装 Decky 尚待真机验证。
+- 当前为 alpha.9 测试版，双击安装入口、全新设备的首次登录和自动安装 Decky 尚待真机验证。
 - 适用于默认用户为 `deck` 的 SteamOS x86_64；请勿同时开启其他代理工具的 TUN。
 - 本项目与喵子官方无隶属关系。[隐私说明](docs/PRIVACY.md) · [第三方资源](docs/THIRD_PARTY.md) · [开发与构建](docs/DEVELOPMENT.md)

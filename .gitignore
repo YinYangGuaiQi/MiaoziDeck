@@ -10,6 +10,8 @@ decky/
 *.run
 MiaoziDeck-*.sh
 MiaoziDeck-*.sh.sha256
+MiaoziDeck-*.desktop
+MiaoziDeck-*.desktop.sha256
 __pycache__/
 *.py[cod]
 .venv/

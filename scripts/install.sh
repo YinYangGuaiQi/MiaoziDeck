@@ -4,7 +4,7 @@ printf '\n喵子 Deck — Yacd 仪表盘与后台加速\n\n'
 HERE="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 SOURCE="$HERE/MiaoziDeck"
 if [[ ! -f "$SOURCE/plugin.json" || ! -f "$SOURCE/dist/index.js" || ! -f "$SOURCE/bin/FlClashCore" ]]; then
-  printf '文件不完整，请完整解压 ZIP，再进入解压后的文件夹运行。\n' >&2
+  printf '安装资源不完整，请重新下载 Release 中的完整安装文件。\n' >&2
   exit 1
 fi
 if [[ "$(uname -m)" != x86_64 ]]; then

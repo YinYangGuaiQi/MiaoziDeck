@@ -4,6 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 import zipfile
+from desktop_package import write_desktop
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_FILES = (
@@ -108,8 +109,10 @@ def main():
     executable.chmod(0o755)
     executable.with_name(executable.name + '.sha256').write_text(
         hashlib.sha256(executable.read_bytes()).hexdigest() + '  ' + executable.name + '\n', encoding='utf-8')
+    desktop = write_desktop(executable, checked_file(ROOT, 'scripts/desktop_launch.py'))
     print(f'Created {output.name}; for local use with separately supplied third-party assets.')
     print(f'Created single-file installer: {executable.name}')
+    print(f'Created double-click installer: {desktop.name}')
 
 
 if __name__ == '__main__':
