@@ -1,0 +1,10 @@
+{
+  "name": "Miaozi Deck",
+  "author": "Private local build",
+  "flags": [],
+  "api_version": 1,
+  "publish": {
+    "tags": ["utility"],
+    "description": "喵子原版内核加速、独立后台服务、本机 Yacd 仪表盘和账号订阅设置。"
+  }
+}
