@@ -2,7 +2,7 @@
 
 在 Steam Deck 上使用喵子加速的非官方 Decky 插件。支持账号登录、订阅同步和节点管理，切换游戏模式与桌面模式后也能保持加速。
 
-[下载安装包](https://github.com/YinYangGuaiQi/MiaoziDeck/releases/latest) · [反馈问题](https://github.com/YinYangGuaiQi/MiaoziDeck/issues)
+[下载安装包](https://github.com/YinYangGuaiQi/MiaoziDeck/releases/latest) · [喵子官网](https://www.mzkxz-invite.us/user) · [反馈问题](https://github.com/YinYangGuaiQi/MiaoziDeck/issues)
 
 ## 功能
 
