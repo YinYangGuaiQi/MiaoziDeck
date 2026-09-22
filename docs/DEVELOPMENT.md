@@ -11,9 +11,9 @@ python3 scripts/package_release.py --assets-dir /path/to/runtime-assets --offici
 
 运行资源的来源与目录要求见 [第三方资源](THIRD_PARTY.md)。输出位于 `release/`，包含双击安装用 `.desktop`、在线安装用 `.sh`、对应 SHA-256 文件与打包用 ZIP。GitHub 自动生成的 Source code ZIP 不能直接安装。
 
-推荐下载 `MiaoziDeck-0.1.0-alpha.9.desktop`，从任意文件夹双击运行。它将完整 `.sh` 安装程序编码为 Desktop Entry 注释，通过 `%k` 获取自身位置，校验后在临时目录启动安装。无需旁边放置其他文件，也无需额外下载运行组件。安装窗口会保留完成或错误信息。
+推荐从 [Latest](https://github.com/YinYangGuaiQi/MiaoziDeck/releases/latest) 下载 `.desktop` 安装文件，从任意文件夹双击运行。它将完整 `.sh` 安装程序编码为 Desktop Entry 注释，通过 `%k` 获取自身位置，校验后在临时目录启动安装。无需旁边放置其他文件，也无需额外下载运行组件。安装窗口会保留完成或错误信息。
 
-仓库根目录的 `install.sh` 是在线下载入口，自动下载并校验 `.sh` 后运行。保留 `.sh` 供在线或命令行使用，不把手动输入终端命令作为默认安装流程。`.desktop.sha256` 可供额外校验，双击安装不要求下载它。
+仓库根目录的 `install.sh` 是在线下载入口，默认获取 Latest，自动下载并校验 `.sh` 后运行。Release 显示名称不参与版本识别，修改名称不会影响安装；可通过 `--version v0.1.0-alpha.9` 固定版本。保留 `.sh` 供在线或命令行使用，不把手动输入终端命令作为默认安装流程。`.desktop.sha256` 可供额外校验，双击安装不要求下载它。
 
 桌面入口采用 [Desktop Entry 规范](https://specifications.freedesktop.org/desktop-entry/latest/exec-variables.html)。系统的信任确认和管理员密码仍由用户处理；浏览器若追加 `.download` 后缀，需要去掉后缀。约 120 MiB 自包含入口在 SteamOS 3.8.16 的启动表现尚待真机验证。
 

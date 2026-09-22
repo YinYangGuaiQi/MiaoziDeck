@@ -2,7 +2,7 @@
 
 在 Steam Deck 上使用喵子加速的非官方 Decky 插件。支持账号登录、订阅同步和节点管理，切换游戏模式与桌面模式后也能保持加速。
 
-[下载安装包](https://github.com/YinYangGuaiQi/MiaoziDeck/releases) · [反馈问题](https://github.com/YinYangGuaiQi/MiaoziDeck/issues)
+[下载安装包](https://github.com/YinYangGuaiQi/MiaoziDeck/releases/latest) · [反馈问题](https://github.com/YinYangGuaiQi/MiaoziDeck/issues)
 
 ## 功能
 
@@ -13,20 +13,22 @@
 
 ## 安装
 
-1. 切换到桌面模式，下载 [MiaoziDeck-0.1.0-alpha.9.desktop](https://github.com/YinYangGuaiQi/MiaoziDeck/releases/download/v0.1.0-alpha.9/MiaoziDeck-0.1.0-alpha.9.desktop)。
+1. 切换到桌面模式，前往 [最新版本](https://github.com/YinYangGuaiQi/MiaoziDeck/releases/latest)，下载其中的 `.desktop` 安装文件。
 2. 在文件管理器中双击安装文件；若系统询问是否信任或允许执行，确认运行。
 3. 在自动打开的安装窗口中输入本机管理员密码，完成后返回游戏模式。
 
-只需这一个文件，保存在哪个文件夹都可以。无需手动输入命令、解压、复制配置或提前登录原版客户端。当前仓库为私有，下载时需登录有权限的 GitHub 账号。
+只需这一个文件，保存在哪个文件夹都可以。无需手动输入命令、解压、复制配置或提前登录原版客户端。
 
 若浏览器将文件保存为 `.desktop.download`，请去掉末尾的 `.download` 再双击。
 
 <details>
-<summary>在线安装命令（仓库公开后可用）</summary>
+<summary>在线安装命令</summary>
 
 ```sh
-curl -fL --proto '=https' https://raw.githubusercontent.com/YinYangGuaiQi/MiaoziDeck/main/install.sh -o /tmp/miaozi-deck-install.sh && bash /tmp/miaozi-deck-install.sh --version v0.1.0-alpha.9
+curl -fL --proto '=https' --proto-redir '=https' https://raw.githubusercontent.com/YinYangGuaiQi/MiaoziDeck/main/install.sh -o /tmp/miaozi-deck-install.sh && bash /tmp/miaozi-deck-install.sh
 ```
+
+默认安装 Latest 版本；修改 Release 显示名称不会影响安装。需要固定版本时，在命令末尾添加 `--version v0.1.0-alpha.9`。
 
 </details>
 
