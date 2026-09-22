@@ -27,7 +27,7 @@ if [[ "$VERSION" == latest ]]; then
   VERSION="${RELEASE_URL##*/}"
   [[ "$VERSION" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-[A-Za-z0-9.-]+)?$ ]] || { printf '最新版本标签格式不受支持。\n' >&2; exit 1; }
 fi
-ASSET="MiaoziDeck-${VERSION#v}.sh"
+ASSET="MiaoziDeck-${VERSION#v}.desktop"
 BASE="https://github.com/$REPO/releases/download/$VERSION"
 printf '正在下载 %s 的完整安装文件，无需另装原版喵子客户端。\n' "$VERSION"
 if ! curl -fL --show-error --proto '=https' --proto-redir '=https' --retry 2 --connect-timeout 20 --max-time 1200 "$BASE/$ASSET" -o "$TEMP_DIR/$ASSET"; then
@@ -36,11 +36,24 @@ if ! curl -fL --show-error --proto '=https' --proto-redir '=https' --retry 2 --c
 fi
 curl -fL --show-error --proto '=https' --proto-redir '=https' --retry 2 --max-time 60 "$BASE/$ASSET.sha256" -o "$TEMP_DIR/$ASSET.sha256"
 python3 - "$TEMP_DIR" "$ASSET" <<'PY'
-import hashlib,re,sys
+import base64,hashlib,re,sys
 from pathlib import Path
 root=Path(sys.argv[1]);name=sys.argv[2]
 expected=(root/(name+'.sha256')).read_text().strip()
 if not re.fullmatch(r'[0-9a-f]{64}  '+re.escape(name),expected):raise SystemExit('安装文件校验信息不匹配。')
-if hashlib.sha256((root/name).read_bytes()).hexdigest()!=expected[:64]:raise SystemExit('安装文件校验失败。')
+installer=root/name
+if hashlib.sha256(installer.read_bytes()).hexdigest()!=expected[:64]:raise SystemExit('安装文件校验失败。')
+# Run the checksummed desktop payload without needing a graphical launcher.
+command=None
+with installer.open(encoding='utf-8') as stream:
+    for line in stream:
+        if line.startswith('Exec='):
+            command=line[5:].rstrip('\r\n')
+            break
+match=re.fullmatch(r'''python3 -c "import base64;exec\(base64\.b64decode\('([A-Za-z0-9+/=]+)'\)\)" %k''',command or '')
+if not match:raise SystemExit('安装入口格式不受支持，请重新下载。')
+namespace={'__name__':'miaozi_online_install'}
+exec(compile(base64.b64decode(match[1],validate=True),'<miaozi-installer>','exec'),namespace)
+if not callable(namespace.get('install')):raise SystemExit('安装入口不完整，请重新下载。')
+raise SystemExit(namespace['install'](str(installer)))
 PY
-bash "$TEMP_DIR/$ASSET"
