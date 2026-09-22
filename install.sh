@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-REPO='Mlietial/MiaoziDeck'
+REPO='YinYangGuaiQi/MiaoziDeck'
 VERSION='v0.1.0-alpha.9'
 while [[ $# -gt 0 ]]; do
   case "$1" in

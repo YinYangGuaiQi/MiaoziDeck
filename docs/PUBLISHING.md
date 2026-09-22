@@ -1,6 +1,6 @@
 # alpha.9 私有预发布
 
-仓库：[Mlietial/MiaoziDeck](https://github.com/Mlietial/MiaoziDeck)，保持私有。About 简介：
+仓库：[YinYangGuaiQi/MiaoziDeck](https://github.com/YinYangGuaiQi/MiaoziDeck)，保持私有。About 简介：
 
 > Steam Deck 喵子加速非官方 Decky 插件：一键完整安装、账号登录、订阅同步、跨模式后台加速与 Yacd 节点管理。
 

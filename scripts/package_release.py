@@ -81,7 +81,7 @@ def main():
             entries.append((checked_file(assets, relative), 'MiaoziDeck/' + relative))
     entries.append((checked_file(ROOT, 'scripts/install.sh'), 'install.sh'))
     entries.append((checked_file(ROOT, 'scripts/install_decky.sh'), 'MiaoziDeck/install_decky.sh'))
-    for relative in ('docs/THIRD_PARTY.md', 'docs/PRIVACY.md', 'docs/PUBLISHING.md'):
+    for relative in ('docs/THIRD_PARTY.md', 'docs/PRIVACY.md', 'docs/PUBLISHING.md', 'docs/DEVELOPMENT.md'):
         entries.append((checked_file(ROOT, relative), 'MiaoziDeck/' + relative))
     version = json.loads((ROOT / 'package.json').read_text(encoding='utf-8'))['version']
     output = ROOT / 'release' / f'MiaoziDeck-{version}.zip'
